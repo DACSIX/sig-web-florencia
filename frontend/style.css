@@ -1,0 +1,229 @@
+/* ===== Base ===== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #1f2933;
+    background: #f4f6f8;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== Encabezado ===== */
+header {
+    background: #1b5e20;
+    color: #ffffff;
+    padding: 12px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+header p {
+    margin: 4px 0 0;
+    font-size: 0.9rem;
+    opacity: 0.85;
+}
+
+/* ===== Distribución: panel + mapa ===== */
+main {
+    flex: 1;
+    display: flex;
+    min-height: 0;
+}
+
+#panel {
+    width: 300px;
+    padding: 12px;
+    overflow-y: auto;
+    background: #ffffff;
+    border-right: 1px solid #d9e2ec;
+}
+
+/* IMPORTANTE: el mapa necesita una altura; sin ella no se ve */
+#mapa {
+    flex: 1;
+    height: 100%;
+}
+
+/* ===== Tarjetas del panel ===== */
+.tarjeta {
+    background: #f8fafb;
+    border: 1px solid #d9e2ec;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 12px;
+}
+
+.tarjeta h2 {
+    margin: 0 0 8px;
+    font-size: 1rem;
+    color: #1b5e20;
+}
+
+#mensaje {
+    margin: 0 0 6px;
+    font-size: 0.9rem;
+}
+
+#mensaje.ok {
+    color: #1b5e20;
+}
+
+#mensaje.error {
+    color: #b71c1c;
+    font-weight: 600;
+}
+
+.contador {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* ===== Ventana emergente ===== */
+.popup-barrio h3 {
+    margin: 0 0 6px;
+    font-size: 1rem;
+    color: #1b5e20;
+}
+
+.popup-barrio table {
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+
+.popup-barrio td {
+    padding: 2px 6px;
+    border-bottom: 1px solid #eee;
+}
+
+.popup-barrio td:first-child {
+    font-weight: 600;
+}
+
+/* ===== Pantallas pequeñas: panel arriba, mapa abajo ===== */
+@media (max-width: 700px) {
+    main {
+        flex-direction: column;
+    }
+
+    #panel {
+        width: 100%;
+        max-height: 40vh;
+        border-right: none;
+        border-bottom: 1px solid #d9e2ec;
+    }
+}
+
+/* ===== opciones l.geoJSON ===== */
+.opcion {
+    border-top: 1px dashed #d9e2ec;
+    padding-top: 8px;
+    margin-top: 8px;
+}
+
+.opcion h3 {
+    margin: 0 0 4px;
+    font-size: 0.9rem;
+    font-family: Consolas, monospace;
+    color: #0d47a1;
+}
+
+.nota {
+    margin: 0 0 6px;
+    font-size: 0.8rem;
+    color: #52606d;
+}
+
+.dato {
+    margin: 0 0 6px;
+    font-size: 0.85rem;
+}
+
+label {
+    display: block;
+    font-size: 0.85rem;
+    margin-bottom: 4px;
+}
+
+select,
+button {
+    font: inherit;
+    font-size: 0.85rem;
+    padding: 5px 8px;
+    margin: 2px 0;
+    border-radius: 5px;
+    border: 1px solid #9aa5b1;
+    background: #ffffff;
+    cursor: pointer;
+}
+
+select {
+    width: 100%;
+}
+
+button:hover {
+    background: #e8f5e9;
+    border-color: #1b5e20;
+}
+
+pre#resultadoCoords {
+    white-space: pre-wrap;
+    font-size: 0.75rem;
+    background: #263238;
+    color: #c3e88d;
+    padding: 6px;
+    border-radius: 5px;
+    margin: 6px 0 0;
+    min-height: 1em;
+}
+
+pre#resultadoCoords:empty {
+    display: none;
+}
+
+/* ===== métodos l.geoJSON ===== */
+.botonera {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+}
+
+button.metodo {
+    font-family: Consolas, monospace;
+    font-size: 0.8rem;
+    text-align: left;
+}
+
+button.restablecer {
+    width: 100%;
+    margin-top: 8px;
+    background: #fff3e0;
+    border-color: #e65100;
+    color: #e65100;
+    font-weight: 600;
+}
+
+button.restablecer:hover {
+    background: #ffe0b2;
+}
+
+pre#resultadoMetodo {
+    white-space: pre-wrap;
+    font-size: 0.75rem;
+    background: #263238;
+    color: #c3e88d;
+    padding: 6px;
+    border-radius: 5px;
+    margin: 6px 0 0;
+}
+
+pre#resultadoMetodo:empty {
+    display: none;
+}

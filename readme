@@ -1,0 +1,19 @@
+# Mapa SIG Web — Barrios de Florencia
+
+Arquitectura: **PostGIS → API REST (Node.js + Express) → GeoJSON → Leaflet**
+
+Proyecto académico — SIG, Ingeniería de Sistemas, Universidad de la Amazonia.
+
+## Puesta en marcha rápida
+
+1. Restaurar la base de datos (ver `sql/barrios_florencia.sql`).
+2. Backend:
+   ```
+   cd backend
+   npm install
+   copy .env.example .env    # luego editar .env con sus datos de PostgreSQL
+   npm run dev
+   ```
+3. Frontend: abrir `frontend/index.html` con Live Server en VS Code.
+
+> El archivo `.env` contiene credenciales y no se sube al repositorio.
